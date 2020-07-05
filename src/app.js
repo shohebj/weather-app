@@ -22,21 +22,22 @@ app.use(express.static(publicDirectoryPath));
 app.get("", (req, res) => {
   res.render("index", {
     title: "Weather App",
-    name: "Insane Clown",
+    name: "Shohebj",
   });
 });
 
 app.get("/about", (req, res) => {
-  res.render("index", {
+  res.render("about", {
     title: "About",
-    name: "Insane Clown",
+    name: "Shohebj",
   });
 });
 
 app.get("/help", (req, res) => {
-  res.render("index", {
+  res.render("help", {
+    helpText: "For any issue contact shohebj00@gmail.com",
     title: "Help",
-    name: "Insane Clown",
+    name: "Shohebj",
   });
 });
 
