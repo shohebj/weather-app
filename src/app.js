@@ -48,7 +48,7 @@ app.get("/weather", (req, res) => {
     });
   }
 
-  location(req.query.address, (error, { cond, temp } = {}) => {
+  location(req.query.address, (error, { cond, temp, country } = {}) => {
     if (error) {
       return res.send({ error });
     }
@@ -56,6 +56,7 @@ app.get("/weather", (req, res) => {
       forecast: cond,
       temperature: temp,
       address: req.query.address,
+      country,
     });
   });
 });

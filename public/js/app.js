@@ -25,9 +25,13 @@ weatherForm.addEventListener("submit", (e) => {
       if (data.error) {
         ms1.textContent = data.error;
       } else {
-        ms1.textContent = data.forecast;
+        ms1.textContent = data.address + ", " + data.country;
         ms2.textContent =
-          "It is currently " + data.temperature + " degress out";
+          data.forecast +
+          "." +
+          " It is currently " +
+          data.temperature +
+          " degress out";
       }
     });
   });

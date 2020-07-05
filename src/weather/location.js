@@ -17,6 +17,7 @@ const location = (id, callback) => {
         temp: response.body.current.temp_c,
         // lon: response.body.coord.lon,
         city: response.body.location.name,
+        country: response.body.location.country,
       });
     }
   });
