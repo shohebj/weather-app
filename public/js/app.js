@@ -20,17 +20,15 @@ weatherForm.addEventListener("submit", (e) => {
   ms1.textContent = "Loading..";
   ms2.textContent = "";
 
-  fetch("http://localhost:3000/weather?address=" + location).then(
-    (response) => {
-      response.json().then((data) => {
-        if (data.error) {
-          ms1.textContent = data.error;
-        } else {
-          ms1.textContent = data.forecast;
-          ms2.textContent =
-            "It is currently " + data.temperature + " degress out";
-        }
-      });
-    }
-  );
+  fetch("/weather?address=" + location).then((response) => {
+    response.json().then((data) => {
+      if (data.error) {
+        ms1.textContent = data.error;
+      } else {
+        ms1.textContent = data.forecast;
+        ms2.textContent =
+          "It is currently " + data.temperature + " degress out";
+      }
+    });
+  });
 });
